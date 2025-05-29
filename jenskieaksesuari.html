@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terra Pro - интернет-магазин стильных женских аксессуаров">
+  <title>Terra Pro - Стильные Аксессуары для Женщин</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/jenskieaksesuari.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>TERRA PRO</h1>
+      <p>ELEGANT STYLE</p>
+    </div>
+
+    <div class="nav-links">
+      <a href="/index.html">Женщины</a>
+      <a href="/index.html">Мужчины</a>
+      <a href="#">Каталог одежды</a>
+      <a href="#" class="sale">Товары со скидкой</a>
+      <a href="#">Новые коллекции</a>
+      <a href="#">О компании</a>
+    </div>
+
+    <div class="nav-icons">
+      <a href="tel:+998772500391"><i class="fas fa-phone-alt"></i></a>
+      <a href="#" class="search-link"><i class="fas fa-search"></i></a>
+      <a href="#" class="cart-link"><i class="fas fa-shopping-bag"></i></a>
+      <a href="#" class="user-link"><i class="far fa-user"></i></a>
+      <div class="language-switcher">
+        <span class="active">RU</span>
+        <span>ENG</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="banner">
+    <div class="banner-text">
+      <h2>СИЯЙ С АКСЕССУАРАМИ</h2>
+      <button onclick="window.location.href='#products'" class="pulse">Посмотреть всё</button>
+    </div>
+  </section>
+
+  <section class="accessories" id="products">
+    <div class="section-title">
+      <h2>Женские Аксессуары</h2>
+      <p>Дополните свой образ с элегантными деталями</p>
+    </div>
+
+    <div class="accessories-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="bags">Сумки</button>
+      <button class="filter-btn" data-filter="jewelry">Украшения</button>
+      <button class="filter-btn" data-filter="scarves">Шарфы</button>
+      <button class="filter-btn" data-filter="sunglasses">Очки</button>
+    </div>
+
+    <div class="accessories-grid">
+      <!-- Сумка -->
+      <div class="accessory-card" data-category="bags">
+        <div class="accessory-badge">Новинка</div>
+        <div class="accessory-image">
+          <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Сумка">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="accessory-info">
+          <h3>Сумка "Шик"</h3>
+          <div class="accessory-price">
+            799 000 сум
+            <span class="old-price">999 000 сум</span>
+          </div>
+          <div class="accessory-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ожерелье -->
+      <div class="accessory-card" data-category="jewelry">
+        <div class="accessory-badge">Хит</div>
+        <div class="accessory-image">
+          <img src="https://i.pinimg.com/736x/56/65/e0/5665e06ed23fce073e0926407724c595.jpg" alt="Ожерелье">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="accessory-info">
+          <h3>Ожерелье "Лунный свет"</h3>
+          <div class="accessory-price">
+            399 000 сум
+          </div>
+          <div class="accessory-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Шарф -->
+      <div class="accessory-card" data-category="scarves">
+        <div class="accessory-image">
+          <img src="https://avatars.mds.yandex.net/i?id=1bf8d3e7ad35c2f5b6785e14b68109b2_l-13201131-images-thumbs&n=13" alt="Шарф">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="accessory-info">
+          <h3>Шарф "Осенний уют"</h3>
+          <div class="accessory-price">
+            299 000 сум
+          </div>
+          <div class="accessory-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Солнцезащитные очки -->
+      <div class="accessory-card" data-category="sunglasses">
+        <div class="accessory-badge">-20%</div>
+        <div class="accessory-image">
+          <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Солнцезащитные очки">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="accessory-info">
+          <h3>Очки "Солнечный стиль"</h3>
+          <div class="accessory-price">
+            499 000 сум
+            <span class="old-price">599 000 сум</span>
+          </div>
+          <div class="accessory-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Браслет -->
+      <div class="accessory-card" data-category="jewelry">
+        <div class="accessory-image">
+          <img src="https://cs5.livemaster.ru/storage/4a/a6/ebf02e72b9fca0abb455517e1dv4--ukrasheniya-mnogoryadnyj-memori-braslet-iskry.jpg" alt="Браслет">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="accessory-info">
+          <h3>Браслет "Искры"</h3>
+          <div class="accessory-price">
+            349 000 сум
+          </div>
+          <div class="accessory-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Клатч -->
+      <div class="accessory-card" data-category="bags">
+        <div class="accessory-badge">Новинка</div>
+        <div class="accessory-image">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Клатч">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="accessory-info">
+          <h3>Клатч "Вечерний"</h3>
+          <div class="accessory-price">
+            599 000 сум
+          </div>
+          <div class="accessory-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-all">
+      <button class="view-all-btn">Смотреть всю коллекцию</button>
+    </div>
+  </section>
+
+<script src="jenskieaksesuari.js"></script>
+</body>
+</html>

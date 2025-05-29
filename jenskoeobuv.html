@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terra Pro - интернет-магазин модной одежды для мужчин и женщин">
+  <title>Terra Pro - Elegant Style | Интернет-магазин модной одежды</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+
+<link rel="stylesheet" href="jenskoeobuv.CSS">
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>TERRA PRO</h1>
+      <p>ELEGANT STYLE</p>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html">Женщины</a></li>
+        <li><a href="/index.html">Мужчины</a></li>
+        <li><a href="#">Каталог одежды</a></li>
+        <li><a href="#" class="sale">Товары со скидкой</a></li>
+        <li><a href="#">Новые коллекции</a></li>
+        <li><a href="#">О компании</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-contacts">
+      <a href="tel:+998772500391" class="phone-link">
+        <i class="fas fa-phone-alt"></i>
+        <span>+998 77 2500391</span>
+      </a>
+      
+      <div class="header-icons">
+        <a href="#" class="search-link"><i class="fas fa-search"></i></a>
+        <a href="#" class="cart-link"><i class="fas fa-shopping-bag"></i></a>
+        <a href="#" class="user-link"><i class="far fa-user"></i></a>
+        <div class="language-switcher">
+          <span class="active">RU</span>
+          <span>ENG</span>
+        </div>
+      </div>
+    </div>
+    
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <section class="banner">
+    <div class="banner-text floating">
+      <h2>ЖИВИ ПРОДАЖАМИ</h2>
+      <button onclick="window.location.href='#products'" class="pulse">Посмотреть всё</button>
+    </div>
+  </section>
+
+  <section class="info-cards">
+    <div class="info-grid">
+      <div class="info-card">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Покупка товара в рассрочку и без комиссии</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-box-open"></i>
+        <p>Легкий товарный возврат</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-money-bill-wave"></i>
+        <p>Бесплатная доставка от 500 000 сум</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-truck"></i>
+        <p>Доставка по всему Узбекистану</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="women-shoes" id="products">
+    <div class="section-title">
+      <h2>Женская обувь</h2>
+      <p>Стиль и комфорт в каждом шаге</p>
+    </div>
+    
+    <div class="shoes-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="heels">Туфли</button>
+      <button class="filter-btn" data-filter="boots">Ботинки</button>
+      <button class="filter-btn" data-filter="sneakers">Кроссовки</button>
+      <button class="filter-btn" data-filter="sandals">Сандалии</button>
+    </div>
+    
+    <div class="shoes-grid">
+      <!-- Туфли на каблуке -->
+      <div class="shoe-card" data-category="heels">
+        <div class="shoe-badge">Новинка</div>
+        <div class="shoe-image">
+          <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Туфли на каблуке">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="shoe-info">
+          <h3>Туфли на каблуке "Элеганс"</h3>
+          <div class="shoe-colors">
+            <span class="color black active"></span>
+            <span class="color red"></span>
+            <span class="color beige"></span>
+          </div>
+          <div class="shoe-price">
+            459 000 сум
+            <span class="old-price">599 000 сум</span>
+          </div>
+          <div class="shoe-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ботинки -->
+      <div class="shoe-card" data-category="boots">
+        <div class="shoe-badge">-30%</div>
+        <div class="shoe-image">
+          <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ботинки">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="shoe-info">
+          <h3>Ботинки "Зимняя сказка"</h3>
+          <div class="shoe-colors">
+            <span class="color brown active"></span>
+            <span class="color black"></span>
+          </div>
+          <div class="shoe-price">
+            699 000 сум
+            <span class="old-price">999 000 сум</span>
+          </div>
+          <div class="shoe-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Кроссовки -->
+      <div class="shoe-card" data-category="sneakers">
+        <div class="shoe-badge">Хит</div>
+        <div class="shoe-image">
+          <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Кроссовки">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="shoe-info">
+          <h3>Кроссовки "Спорт Стайл"</h3>
+          <div class="shoe-colors">
+            <span class="color white active"></span>
+            <span class="color pink"></span>
+            <span class="color blue"></span>
+          </div>
+          <div class="shoe-price">
+            549 000 сум
+          </div>
+          <div class="shoe-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Сандалии -->
+      <div class="shoe-card" data-category="sandals">
+        <div class="shoe-image">
+          <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Сандалии">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="shoe-info">
+          <h3>Сандалии "Летний бриз"</h3>
+          <div class="shoe-colors">
+            <span class="color gold active"></span>
+            <span class="color silver"></span>
+          </div>
+          <div class="shoe-price">
+            399 000 сум
+          </div>
+          <div class="shoe-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Балетки -->
+      <div class="shoe-card" data-category="heels">
+        <div class="shoe-image">
+          <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Балетки">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="shoe-info">
+          <h3>Балетки "Нежность"</h3>
+          <div class="shoe-colors">
+            <span class="color nude active"></span>
+            <span class="color black"></span>
+            <span class="color red"></span>
+          </div>
+          <div class="shoe-price">
+            329 000 сум
+          </div>
+          <div class="shoe-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Сапоги -->
+      <div class="shoe-card" data-category="boots">
+        <div class="shoe-badge">Новинка</div>
+        <div class="shoe-image">
+          <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Сапоги">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="shoe-info">
+          <h3>Сапоги "Грация"</h3>
+          <div class="shoe-colors">
+            <span class="color black active"></span>
+            <span class="color brown"></span>
+          </div>
+          <div class="shoe-price">
+            899 000 сум
+          </div>
+          <div class="shoe-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="view-all">
+      <button class="view-all-btn">Смотреть всю коллекцию</button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="jenskoeobuv.js"></script>
+          

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terra Pro - интернет-магазин модной одежды и аксессуаров">
+  <title>Terra Pro - Chic Elegance | Женские сумки и аксессуары</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <link rel="stylesheet" href="/jenskiesumki.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>TERRA PRO</h1>
+      <p>CHIC ELEGANCE</p>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html">Женщины</a></li>
+        <li><a href="/index.html">Мужчины</a></li>
+        <li><a href="#">Каталог одежды</a></li>
+        <li><a href="#" class="sale">Товары со скидкой</a></li>
+        <li><a href="#">Новые коллекции</a></li>
+        <li><a href="#">О компании</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-right">
+      <a href="tel:+998712502931" class="phone-link">+998 71 2502931</a>
+      
+      <div class="header-icons">
+        <a href="#" class="search-link"><i class="fas fa-search"></i></a>
+        <a href="#" class="cart-link"><i class="fas fa-shopping-bag"></i></a>
+        <a href="#" class="wishlist-link"><i class="far fa-heart"></i></a>
+        <a href="#" class="user-link"><i class="far fa-user"></i></a>
+        <div class="language-switcher">
+          <span class="active">RU</span>
+          <span>ENG</span>
+        </div>
+      </div>
+    </div>
+    
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <section class="banner">
+    <div class="banner-text floating">
+      <h2>ЭЛЕГАНТНОСТЬ В КАЖДОЙ ДЕТАЛИ</h2>
+      <button onclick="window.location.href='#bags'" class="pulse">Смотреть коллекцию</button>
+    </div>
+  </section>
+
+  <section class="women-bags" id="bags">
+    <div class="section-title">
+      <h2>Женские сумки</h2>
+      <p>Совершенство стиля в каждой модели</p>
+    </div>
+    
+    <div class="bags-filter">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="clutch">Клатчи</button>
+      <button class="filter-btn" data-filter="tote">Тоут-сумки</button>
+      <button class="filter-btn" data-filter="backpack">Рюкзаки</button>
+      <button class="filter-btn" data-filter="crossbody">Через плечо</button>
+    </div>
+    
+    <div class="bags-grid">
+      <!-- Клатч -->
+      <div class="bag-card" data-category="clutch">
+        <div class="bag-badge">Новинка</div>
+        <div class="bag-image">
+          <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Кожаный клатч">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="bag-info">
+          <h3>Клатч "Вечерний шик"</h3>
+          <div class="bag-colors">
+            <span class="color black active"></span>
+            <span class="color gold"></span>
+          </div>
+          <div class="bag-price">
+            459 000 сум
+            <span class="old-price">599 000 сум</span>
+          </div>
+          <div class="bag-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Тоут-сумка -->
+      <div class="bag-card" data-category="tote">
+        <div class="bag-badge">-30%</div>
+        <div class="bag-image">
+          <img src="https://images.unsplash.com/photo-1554342872-034a06541bad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Тоут-сумка">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="bag-info">
+          <h3>Тоут "Городской стиль"</h3>
+          <div class="bag-colors">
+            <span class="color beige active"></span>
+            <span class="color brown"></span>
+          </div>
+          <div class="bag-price">
+            699 000 сум
+            <span class="old-price">999 000 сум</span>
+          </div>
+          <div class="bag-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Рюкзак -->
+      <div class="bag-card" data-category="backpack">
+        <div class="bag-badge">Хит</div>
+        <div class="bag-image">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Кожаный рюкзак">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="bag-info">
+          <h3>Рюкзак "Универсал"</h3>
+          <div class="bag-colors">
+            <span class="color brown active"></span>
+            <span class="color black"></span>
+          </div>
+          <div class="bag-price">
+            549 000 сум
+          </div>
+          <div class="bag-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Сумка через плечо -->
+      <div class="bag-card" data-category="crossbody">
+        <div class="bag-image">
+          <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Сумка через плечо">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="bag-info">
+          <h3>Сумка "Повседневная"</h3>
+          <div class="bag-colors">
+            <span class="color red active"></span>
+            <span class="color black"></span>
+          </div>
+          <div class="bag-price">
+            399 000 сум
+          </div>
+          <div class="bag-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Дорожная сумка -->
+      <div class="bag-card" data-category="tote">
+        <div class="bag-image">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Дорожная сумка">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="bag-info">
+          <h3>Дорожная сумка "Вояж"</h3>
+          <div class="bag-colors">
+            <span class="color black active"></span>
+            <span class="color brown"></span>
+          </div>
+          <div class="bag-price">
+            329 000 сум
+          </div>
+          <div class="bag-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Вечерняя сумка -->
+      <div class="bag-card" data-category="clutch">
+        <div class="bag-badge">Новинка</div>
+        <div class="bag-image">
+          <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Вечерняя сумка">
+          <div class="quick-view">Быстрый просмотр</div>
+        </div>
+        <div class="bag-info">
+          <h3>Сумка "Вечерний бриз"</h3>
+          <div class="bag-colors">
+            <span class="color silver active"></span>
+            <span class="color gold"></span>
+          </div>
+          <div class="bag-price">
+            899 000 сум
+          </div>
+          <div class="bag-actions">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="add-to-wishlist"><i class="far fa-heart"></i></button>
+            <button class="view-details">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="view-all">
+      <button class="view-all-btn">Смотреть всю коллекцию</button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/jenskiesumki.js"></script>
+</body>
+</html>
