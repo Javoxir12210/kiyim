@@ -279,6 +279,10 @@
             position: relative;
             height: 250px;
             overflow: hidden;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .product-image img {
@@ -552,6 +556,36 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+        
+        /* Сообщение об ошибке загрузки изображения */
+        .product-image {
+            position: relative;
+        }
+        
+        .product-image::after {
+            content: "Изображение недоступно";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .product-image img:empty + .product-image::after {
+            opacity: 1;
+        }
+        
+        .product-image img[src=""] + .product-image::after {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -643,7 +677,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Charm kurtka">
+                                <img src="https://z-cdn-media.chatglm.cn/files/a55601f6-83ed-4b7c-9cff-da8204252b5a_pasted_image_1757771304621.png?auth_key=1789307944-2f688d10161e498797562396faa0dfe2-0-c1ba72478c1a53fb4b8f274116ed697b" alt="Charm kurtka" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Charm+kurtka';">
                                 <span class="product-badge">Eng ko'p sotilgan</span>
                             </div>
                             <div class="product-info">
@@ -653,8 +687,8 @@
                                     <span class="old-price">799 000 so'm</span>
                                 </div>
                                 <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
+                                    <button class="add-to-cart" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://z-cdn-media.chatglm.cn/files/a55601f6-83ed-4b7c-9cff-da8204252b5a_pasted_image_1757771304621.png?auth_key=1789307944-2f688d10161e498797562396faa0dfe2-0-c1ba72478c1a53fb4b8f274116ed697b"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                    <button class="add-to-wishlist" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://z-cdn-media.chatglm.cn/files/a55601f6-83ed-4b7c-9cff-da8204252b5a_pasted_image_1757771304621.png?auth_key=1789307944-2f688d10161e498797562396faa0dfe2-0-c1ba72478c1a53fb4b8f274116ed697b"><i class="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -662,14 +696,14 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg" alt="Jun sviter">
+                                <img src="https://images.unsplash.com/photo-1576871337622-9d5e8b0b5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jun sviter" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Jun+sviter';">
                             </div>
                             <div class="product-info">
                                 <h3>Erkaklar jun sviteri</h3>
                                 <div class="product-price">399 000 so'm</div>
                                 <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg"><i class="far fa-heart"></i></button>
+                                    <button class="add-to-cart" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://images.unsplash.com/photo-1576871337622-9d5e8b0b5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                    <button class="add-to-wishlist" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://images.unsplash.com/photo-1576871337622-9d5e8b0b5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -677,7 +711,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar">
+                                <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Jinslar';">
                                 <span class="product-badge">Yangi</span>
                             </div>
                             <div class="product-info">
@@ -696,7 +730,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0" alt="Jun palto">
+                                <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jun palto" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Jun+palto';">
                                 <span class="product-badge">-25%</span>
                             </div>
                             <div class="product-info">
@@ -706,8 +740,8 @@
                                     <span class="old-price">1 065 000 so'm</span>
                                 </div>
                                 <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0"><i class="far fa-heart"></i></button>
+                                    <button class="add-to-cart" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                    <button class="add-to-wishlist" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -715,7 +749,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kechki ko'ylak">
+                                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kechki ko'ylak" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Kechki+ko\'ylak';">
                             </div>
                             <div class="product-info">
                                 <h3>Ayollar kechki ko'ylagi</h3>
@@ -730,7 +764,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.uzum.uz/cpa85fc0u44vrh8f69fg/original.jpg" alt="Yubka">
+                                <img src="https://images.unsplash.com/photo-1583468427403-065a1f19e4b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Yubka" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Yubka';">
                                 <span class="product-badge">Hit</span>
                             </div>
                             <div class="product-info">
@@ -740,8 +774,8 @@
                                     <span class="old-price">399 000 so'm</span>
                                 </div>
                                 <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.uzum.uz/cpa85fc0u44vrh8f69fg/original.jpg"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.uzum.uz/cpa85fc0u44vrh8f69fg/original.jpg"><i class="far fa-heart"></i></button>
+                                    <button class="add-to-cart" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.unsplash.com/photo-1583468427403-065a1f19e4b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                    <button class="add-to-wishlist" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.unsplash.com/photo-1583468427403-065a1f19e4b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -749,7 +783,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylak">
+                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylak" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Ko\'ylak';">
                             </div>
                             <div class="product-info">
                                 <h3>Erkaklar klassik ko'ylagi</h3>
@@ -764,7 +798,7 @@
                     <div class="swiper-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sumka">
+                                <img src="https://images.unsplash.com/photo-1584917865442-4899110f6b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sumka" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Sumka';">
                                 <span class="product-badge">Yangi</span>
                             </div>
                             <div class="product-info">
@@ -774,8 +808,8 @@
                                     <span class="old-price">1 199 000 so'm</span>
                                 </div>
                                 <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
+                                    <button class="add-to-cart" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1584917865442-4899110f6b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                    <button class="add-to-wishlist" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1584917865442-4899110f6b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -795,35 +829,35 @@
             </div>
             <div class="category-grid">
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Tashqi kiyimlar">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Tashqi kiyimlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Tashqi+kiyimlar';">
                     <p>Tashqi kiyimlar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://images.uzum.uz/ckim623k9fq8lb3ar0ag/original.jpg" alt="Kaptishonlar">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kaptishonlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Kaptishonlar';">
                     <p>Kaptishonlar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar va kardiganlar">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar va kardiganlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Jinslar+va+kardiganlar';">
                     <p>Jinslar va kardiganlar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Futbolkalar va pololar">
+                    <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Futbolkalar va pololar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Futbolkalar+va+pololar';">
                     <p>Futbolkalar va pololar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylaklar">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylaklar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Ko\'ylaklar';">
                     <p>Ko'ylaklar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg" alt="Shimlar">
+                    <img src="https://images.unsplash.com/photo-1542271021-f736b6e647c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Shimlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Shimlar';">
                     <p>Shimlar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar">
+                    <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Jinslar';">
                     <p>Jinslar</p>
                 </div>
                 <div class="category-card">
-                    <img src="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0" alt="Ko'ylaklar">
+                    <img src="https://images.unsplash.com/photo-1595775795711-6380dd2bd429?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylaklar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Ko\'ylaklar';">
                     <p>Ko'ylaklar</p>
                 </div>
             </div>
