@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <style>
         /* Базовые стили */
         * {
@@ -20,59 +20,41 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
             line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Шапка */
+        /* Хедер и навигация */
         header {
-            background-color: #fff;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .logo h1 {
-            font-size: 24px;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 0;
         }
         
         .logo p {
-            font-size: 12px;
+            font-size: 0.9rem;
             color: #7f8c8d;
-            margin-top: 0;
         }
         
         .header-right {
             display: flex;
-            gap: 20px;
+            gap: 1.5rem;
         }
         
         .header-right a {
             text-decoration: none;
-            color: #333;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            color: #34495e;
+            font-weight: 500;
             transition: color 0.3s;
         }
         
@@ -80,118 +62,93 @@
             color: #e74c3c;
         }
         
-        /* Навигация */
+        /* Навигационное меню */
         nav {
-            background-color: #2c3e50;
-            padding: 10px 0;
+            background: #2c3e50;
+            padding: 0.8rem 0;
         }
         
-        .nav-container ul {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav ul {
             display: flex;
             list-style: none;
             justify-content: space-between;
             align-items: center;
         }
         
-        .nav-container ul li {
-            position: relative;
-        }
-        
-        .nav-container ul li a {
+        nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-            font-size: 14px;
-            transition: background-color 0.3s;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+            border-radius: 4px;
         }
         
-        .nav-container ul li a:hover {
-            background-color: #34495e;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.1);
         }
         
         /* Баннер */
         .banner {
-            height: 400px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523381210438-e7f3e64b250f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
-            margin-bottom: 40px;
+            color: white;
         }
         
         .banner-text h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .banner-text button {
-            background-color: #e74c3c;
-            color: #fff;
+            background: #e74c3c;
+            color: white;
             border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            border-radius: 4px;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: transform 0.3s, background 0.3s;
         }
         
         .banner-text button:hover {
-            background-color: #c0392b;
+            background: #c0392b;
+            transform: scale(1.05);
         }
         
         /* Информационные карточки */
         .info-cards {
-            padding: 40px 0;
-            background-color: #fff;
-            margin-bottom: 40px;
+            padding: 3rem 0;
+            background: #fff;
         }
         
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
         .info-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
+            text-align: center;
+            padding: 1.5rem;
             border-radius: 8px;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            background: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
@@ -200,89 +157,68 @@
         }
         
         .info-card i {
-            font-size: 24px;
+            font-size: 2.5rem;
             color: #e74c3c;
+            margin-bottom: 1rem;
         }
         
-        /* Товары */
+        /* Секция с товарами - ИСПРАВЛЕНИЕ НАЧИНАЕТСЯ ЗДЕСЬ */
         .products {
-            padding: 40px 0;
+            padding: 3rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
         
         .section-title h2 {
-            font-size: 32px;
+            font-size: 2.2rem;
             color: #2c3e50;
             position: relative;
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 0.5rem;
         }
         
-        .section-title h2:after {
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 3px;
-            background-color: #e74c3c;
+            background: #e74c3c;
         }
         
-        /* Стили для Swiper */
-        .swiper {
-            width: 100%;
-            height: 100%;
-            padding-bottom: 40px;
+        /* Контейнер для карточек товаров */
+        .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #e74c3c;
-        }
-        
-        .swiper-pagination-bullet-active {
-            background-color: #e74c3c;
-        }
-        
+        /* Стили для карточек товаров */
         .product-card {
-            width: 100%;
-            max-width: 280px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: #fff;
+            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .product-image {
             position: relative;
             height: 250px;
             overflow: hidden;
-            background-color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .product-image img {
@@ -293,117 +229,118 @@
         }
         
         .product-card:hover .product-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .product-badge {
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #e74c3c;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 12px;
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
         }
         
         .product-info {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 1.5rem;
         }
         
         .product-info h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: #2c3e50;
         }
         
         .product-price {
-            font-size: 18px;
-            font-weight: 600;
-            color: #e74c3c;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
         }
         
         .old-price {
-            text-decoration: line-through;
+            font-size: 1rem;
             color: #7f8c8d;
-            font-size: 14px;
-            margin-left: 10px;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
         }
         
         .product-actions {
             display: flex;
             justify-content: space-between;
-            margin-top: auto;
+            align-items: center;
         }
         
         .add-to-cart {
-            background-color: #e74c3c;
-            color: #fff;
+            flex: 1;
+            background: #2c3e50;
+            color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
+            padding: 0.8rem;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            transition: background 0.3s;
+            margin-right: 0.5rem;
         }
         
         .add-to-cart:hover {
-            background-color: #c0392b;
+            background: #1a252f;
         }
         
         .add-to-wishlist {
-            background-color: #f8f9fa;
-            color: #7f8c8d;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s;
+            transition: background 0.3s, color 0.3s;
         }
         
         .add-to-wishlist:hover {
-            background-color: #e74c3c;
-            color: #fff;
+            background: #e74c3c;
+            color: white;
+            border-color: #e74c3c;
         }
         
         /* Категории */
         .categories {
-            padding: 40px 0;
-            background-color: #fff;
+            padding: 3rem 0;
+            background: #f8f9fa;
         }
         
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
         .category-card {
             position: relative;
-            border-radius: 8px;
-            overflow: hidden;
             height: 200px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-5px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .category-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .category-card:hover img {
+            transform: scale(1.1);
         }
         
         .category-card p {
@@ -411,74 +348,87 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: rgba(0,0,0,0.7);
-            color: #fff;
-            padding: 10px;
-            margin: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1rem;
             text-align: center;
             font-weight: 600;
         }
         
         /* CTA секция */
         .cta-section {
-            padding: 60px 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1523381210438-e7f3e64b250f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
+            color: white;
             text-align: center;
-            color: #fff;
-            margin-bottom: 40px;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
         .cta-content h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         
         .cta-content p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
         .cta-content button {
-            background-color: #e74c3c;
-            color: #fff;
+            background: #e74c3c;
+            color: white;
             border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            border-radius: 4px;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
         
         .cta-content button:hover {
-            background-color: #c0392b;
+            background: #c0392b;
+            transform: scale(1.05);
         }
         
-        /* Подвал */
+        /* Футер */
         footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 50px 0 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
         }
         
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
-        .footer-column h3, .footer-column h4 {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #fff;
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
         }
         
-        .footer-column p {
-            margin-bottom: 20px;
-            font-size: 14px;
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
         }
         
         .footer-column ul {
@@ -486,13 +436,12 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 0.8rem;
         }
         
         .footer-column ul li a {
-            color: #bdc3c7;
+            color: #ecf0f1;
             text-decoration: none;
-            font-size: 14px;
             transition: color 0.3s;
         }
         
@@ -502,114 +451,137 @@
         
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 1rem;
+            margin-top: 1rem;
         }
         
         .social-links a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: #34495e;
-            color: #fff;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            transition: background-color 0.3s;
+            color: white;
+            transition: background 0.3s;
         }
         
         .social-links a:hover {
-            background-color: #e74c3c;
+            background: #e74c3c;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #34495e;
-            font-size: 14px;
-            color: #bdc3c7;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Анимации */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
         }
         
         /* Адаптивность */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .header-right {
                 display: none;
             }
             
-            .nav-container ul {
-                flex-direction: column;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
-            .nav-container ul li {
-                width: 100%;
+            nav ul li {
+                margin: 0.3rem;
             }
             
             .banner-text h2 {
-                font-size: 32px;
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner {
+                height: 400px;
             }
             
-            .info-grid {
+            .banner-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .swiper-wrapper {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            .banner {
+                height: 300px;
+            }
+            
+            .banner-text h2 {
+                font-size: 1.5rem;
+            }
+            
+            .swiper-wrapper {
                 grid-template-columns: 1fr;
             }
             
+            .info-grid,
             .category-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
-        }
-        
-        /* Сообщение об ошибке загрузки изображения */
-        .product-image {
-            position: relative;
-        }
-        
-        .product-image::after {
-            content: "Изображение недоступно";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #7f8c8d;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .product-image img:empty + .product-image::after {
-            opacity: 1;
-        }
-        
-        .product-image img[src=""] + .product-image::after {
-            opacity: 1;
         }
     </style>
 </head>
 <body>
     <div class="particle-container"></div>
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <h1>TERRA PRO</h1>
-                <p>SOG'LOM SHASSIYAT</p>
-            </div>
-            <div class="header-right">
-                <a href="tel:+998712509931" style="--i: 1"><i class="fas fa-phone"></i> +998 71 250 99 31</a>
-                <a href="#" style="--i: 2"><i class="fas fa-search"></i> Qidiruv</a>
-                <a href="#" class="cart-link" style="--i: 3"><i class="fas fa-shopping-cart"></i> Savat</a>
-                <a href="#" class="wishlist-link" style="--i: 4"><i class="fas fa-heart"></i> Sevimlilar</a>
-                <a href="#" style="--i: 5"><i class="fas fa-user"></i> Avtorizatsiya</a>
-            </div>
-            <div class="language">
-                <!-- Здесь будет переключатель языка -->
-            </div>
+        <div class="logo">
+            <h1>TERRA PRO</h1>
+            <p>SOG'LOM SHASSIYAT</p>
+        </div>
+        <div class="header-right">
+            <a href="tel:+998712509931" style="--i: 1"><i class="fas fa-phone"></i> +998 71 250 99 31</a>
+            <a href="#" style="--i: 2"><i class="fas fa-search"></i> Qidiruv</a>
+            <a href="#" class="cart-link" style="--i: 3"><i class="fas fa-shopping-cart"></i> Savat</a>
+            <a href="#" class="wishlist-link" style="--i: 4"><i class="fas fa-heart"></i> Sevimlilar</a>
+            <a href="#" style="--i: 5"><i class="fas fa-user"></i> Avtorizatsiya</a>
+        </div>
+        <div class="language">
+            <!-- Здесь будет переключатель языка -->
         </div>
     </header>
     <nav>
-        <div class="container nav-container">
+        <div class="nav-container">
             <ul>
                 <li class="dropdown">
                     <a href="#">Erkaklar <i class="fas fa-chevron-down"></i></a>
@@ -646,397 +618,467 @@
         </div>
     </section>
     <section class="info-cards">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <i class="fas fa-shopping-bag"></i>
-                    <p>Mahsulotni bo'lib-bo'lib sotib olish va komissiyasiz</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-box-open"></i>
-                    <p>Oson mahsulot qaytarish</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <p>500 000 so'mdan bepul yetkazib berish</p>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-truck"></i>
-                    <p>O'zbekiston bo'ylab yetkazib berish</p>
-                </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Mahsulotni bo'lib-bo'lib sotib olish va komissiyasiz</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-box-open"></i>
+                <p>Oson mahsulot qaytarish</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <p>500 000 so'mdan bepul yetkazib berish</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-truck"></i>
+                <p>O'zbekiston bo'ylab yetkazib berish</p>
             </div>
         </div>
     </section>
     <section class="products" id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ommabop mahsulotlar</h2>
-            </div>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://z-cdn-media.chatglm.cn/files/a55601f6-83ed-4b7c-9cff-da8204252b5a_pasted_image_1757771304621.png?auth_key=1789307944-2f688d10161e498797562396faa0dfe2-0-c1ba72478c1a53fb4b8f274116ed697b" alt="Charm kurtka" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Charm+kurtka';">
-                                <span class="product-badge">Eng ko'p sotilgan</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Erkaklar charm kurtkasi</h3>
-                                <div class="product-price">
-                                    599 000 so'm
-                                    <span class="old-price">799 000 so'm</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://z-cdn-media.chatglm.cn/files/a55601f6-83ed-4b7c-9cff-da8204252b5a_pasted_image_1757771304621.png?auth_key=1789307944-2f688d10161e498797562396faa0dfe2-0-c1ba72478c1a53fb4b8f274116ed697b"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://z-cdn-media.chatglm.cn/files/a55601f6-83ed-4b7c-9cff-da8204252b5a_pasted_image_1757771304621.png?auth_key=1789307944-2f688d10161e498797562396faa0dfe2-0-c1ba72478c1a53fb4b8f274116ed697b"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
+        <div class="section-title">
+            <h2>Ommabop mahsulotlar</h2>
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Charm kurtka">
+                            <span class="product-badge">Eng ko'p sotilgan</span>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1576871337622-9d5e8b0b5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jun sviter" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Jun+sviter';">
+                        <div class="product-info">
+                            <h3>Erkaklar charm kurtkasi</h3>
+                            <div class="product-price">
+                                599 000 so'm
+                                <span class="old-price">799 000 so'm</span>
                             </div>
-                            <div class="product-info">
-                                <h3>Erkaklar jun sviteri</h3>
-                                <div class="product-price">399 000 so'm</div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://images.unsplash.com/photo-1576871337622-9d5e8b0b5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://images.unsplash.com/photo-1576871337622-9d5e8b0b5e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Jinslar';">
-                                <span class="product-badge">Yangi</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Erkaklar klassik jinslari</h3>
-                                <div class="product-price">
-                                    349 000 so'm
-                                    <span class="old-price">499 000 so'm</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Erkaklar klassik jinslari" data-price="349000" data-image="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Erkaklar klassik jinslari" data-price="349000" data-image="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jun palto" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Jun+palto';">
-                                <span class="product-badge">-25%</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Ayollar jun paltosi</h3>
-                                <div class="product-price">
-                                    799 000 so'm
-                                    <span class="old-price">1 065 000 so'm</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kechki ko'ylak" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Kechki+ko\'ylak';">
-                            </div>
-                            <div class="product-info">
-                                <h3>Ayollar kechki ko'ylagi</h3>
-                                <div class="product-price">499 000 so'm</div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar kechki ko'ylagi" data-price="499000" data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar kechki ko'ylagi" data-price="499000" data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1583468427403-065a1f19e4b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Yubka" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Yubka';">
-                                <span class="product-badge">Hit</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Ayollar midi yubkasi</h3>
-                                <div class="product-price">
-                                    279 000 so'm
-                                    <span class="old-price">399 000 so'm</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.unsplash.com/photo-1583468427403-065a1f19e4b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.unsplash.com/photo-1583468427403-065a1f19e4b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylak" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Ko\'ylak';">
-                            </div>
-                            <div class="product-info">
-                                <h3>Erkaklar klassik ko'ylagi</h3>
-                                <div class="product-price">259 000 so'm</div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Erkaklar klassik ko'ylagi" data-price="259000" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Erkaklar klassik ko'ylagi" data-price="259000" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1584917865442-4899110f6b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sumka" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x250?text=Sumka';">
-                                <span class="product-badge">Yangi</span>
-                            </div>
-                            <div class="product-info">
-                                <h3>Ayollar charm sumkasi</h3>
-                                <div class="product-price">
-                                    899 000 so'm
-                                    <span class="old-price">1 199 000 so'm</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="add-to-cart" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1584917865442-4899110f6b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
-                                    <button class="add-to-wishlist" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1584917865442-4899110f6b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
-                                </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Erkaklar charm kurtkasi" data-price="599000" data-image="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Добавляем кнопки навигации и пагинацию -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg" alt="Jun sviter">
+                        </div>
+                        <div class="product-info">
+                            <h3>Erkaklar jun sviteri</h3>
+                            <div class="product-price">399 000 so'm</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Erkaklar jun sviteri" data-price="399000" data-image="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar">
+                            <span class="product-badge">Yangi</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Erkaklar klassik jinslari</h3>
+                            <div class="product-price">
+                                349 000 so'm
+                                <span class="old-price">499 000 so'm</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Erkaklar klassik jinslari" data-price="349000" data-image="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Erkaklar klassik jinslari" data-price="349000" data-image="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0" alt="Jun palto">
+                            <span class="product-badge">-25%</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Ayollar jun paltosi</h3>
+                            <div class="product-price">
+                                799 000 so'm
+                                <span class="old-price">1 065 000 so'm</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Ayollar jun paltosi" data-price="799000" data-image="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kechki ko'ylak">
+                        </div>
+                        <div class="product-info">
+                            <h3>Ayollar kechki ko'ylagi</h3>
+                            <div class="product-price">499 000 so'm</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Ayollar kechki ko'ylagi" data-price="499000" data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Ayollar kechki ko'ylagi" data-price="499000" data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.uzum.uz/cpa85fc0u44vrh8f69fg/original.jpg" alt="Yubka">
+                            <span class="product-badge">Hit</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Ayollar midi yubkasi</h3>
+                            <div class="product-price">
+                                279 000 so'm
+                                <span class="old-price">399 000 so'm</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.uzum.uz/cpa85fc0u44vrh8f69fg/original.jpg"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Ayollar midi yubkasi" data-price="279000" data-image="https://images.uzum.uz/cpa85fc0u44vrh8f69fg/original.jpg"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylak">
+                        </div>
+                        <div class="product-info">
+                            <h3>Erkaklar klassik ko'ylagi</h3>
+                            <div class="product-price">259 000 so'm</div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Erkaklar klassik ko'ylagi" data-price="259000" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Erkaklar klassik ko'ylagi" data-price="259000" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sumka">
+                            <span class="product-badge">Yangi</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Ayollar charm sumkasi</h3>
+                            <div class="product-price">
+                                899 000 so'm
+                                <span class="old-price">1 199 000 so'm</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="fas fa-shopping-cart"></i> Savatga qo'shish</button>
+                                <button class="add-to-wishlist" data-name="Ayollar charm sumkasi" data-price="899000" data-image="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <section class="categories">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kategoriyalar</h2>
+        <div class="section-title">
+            <h2>Kategoriyalar</h2>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Tashqi kiyimlar">
+                <p>Tashqi kiyimlar</p>
             </div>
-            <div class="category-grid">
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Tashqi kiyimlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Tashqi+kiyimlar';">
-                    <p>Tashqi kiyimlar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kaptishonlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Kaptishonlar';">
-                    <p>Kaptishonlar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar va kardiganlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Jinslar+va+kardiganlar';">
-                    <p>Jinslar va kardiganlar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Futbolkalar va pololar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Futbolkalar+va+pololar';">
-                    <p>Futbolkalar va pololar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylaklar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Ko\'ylaklar';">
-                    <p>Ko'ylaklar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1542271021-f736b6e647c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Shimlar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Shimlar';">
-                    <p>Shimlar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Jinslar';">
-                    <p>Jinslar</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1595775795711-6380dd2bd429?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylaklar" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Ko\'ylaklar';">
-                    <p>Ko'ylaklar</p>
-                </div>
+            <div class="category-card">
+                <img src="https://images.uzum.uz/ckim623k9fq8lb3ar0ag/original.jpg" alt="Kaptishonlar">
+                <p>Kaptishonlar</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar va kardiganlar">
+                <p>Jinslar va kardiganlar</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Futbolkalar va pololar">
+                <p>Futbolkalar va pololar</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ko'ylaklar">
+                <p>Ko'ylaklar</p>
+            </div>
+            <div class="category-card">
+                <img src="https://shop.meucci.ru/upload/resize_cache/iblock/77a/a8xccvatizfwb1c1uj716yqbxufoe705/450_5000_1/meucci_fw28009.jpg" alt="Shimlar">
+                <p>Shimlar</p>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jinslar">
+                <p>Jinslar</p>
+            </div>
+            <div class="category-card">
+                <img src="https://static.lichi.com/product/47994/ece070e22b2e4b3dabd4dcc3a431f051.jpg?v=0_47994.0" alt="Ko'ylaklar">
+                <p>Ko'ylaklar</p>
             </div>
         </div>
     </section>
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Terra Pro bilan uslubni kashf eting</h2>
-                <p>Bizning yangiliklarimizga obuna bo'ling va eksklyuziv takliflar va yangi mahsulotlarni birinchi bo'lib oling!</p>
-                <button onclick="window.location.href='#subscribe'">Obuna bo'lish</button>
-            </div>
+        <div class="cta-content">
+            <h2>Terra Pro bilan uslubni kashf eting</h2>
+            <p>Bizning yangiliklarimizga obuna bo'ling va eksklyuziv takliflar va yangi mahsulotlarni birinchi bo'lib oling!</p>
+            <button onclick="window.location.href='#subscribe'">Obuna bo'lish</button>
         </div>
     </section>
     <!-- Savat bo'limi -->
     <section class="cart-section" id="cart">
-        <div class="container">
-            <div class="section-title">
-                <h2>Savat</h2>
-            </div>
-            <div class="cart-container">
-                <div id="cart-items"></div>
-                <div class="total" id="cart-total">Jami: 0 so'm</div>
-                <button class="checkout-btn">Buyurtma berish</button>
-                <a href="#" class="back-to-main">Asosiy sahifaga qaytish</a>
-            </div>
+        <div class="section-title">
+            <h2>Savat</h2>
+        </div>
+        <div class="cart-container">
+            <div id="cart-items"></div>
+            <div class="total" id="cart-total">Jami: 0 so'm</div>
+            <button class="checkout-btn">Buyurtma berish</button>
+            <a href="#" class="back-to-main">Asosiy sahifaga qaytish</a>
         </div>
     </section>
     <!-- Sevimlilar bo'limi -->
     <section class="wishlist-section" id="wishlist">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sevimlilar</h2>
-            </div>
-            <div class="wishlist-container">
-                <div id="wishlist-items"></div>
-                <a href="#" class="back-to-main">Asosiy sahifaga qaytish</a>
-            </div>
+        <div class="section-title">
+            <h2>Sevimlilar</h2>
+        </div>
+        <div class="wishlist-container">
+            <div id="wishlist-items"></div>
+            <a href="#" class="back-to-main">Asosiy sahifaga qaytish</a>
         </div>
     </section>
     <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <h3>TERRA PRO</h3>
-                        <p>ODDIY SHAXSIYAT</p>
-                    </div>
-                    <p>Erkaklar va ayollar uchun zamonaviy kiyimlar internet-do'koni. Har bir tafsilotda sifat, uslub va qulaylik.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <h3>TERRA PRO</h3>
+                    <p>ODDIY SHAXSIYAT</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Katalog</h4>
-                    <ul>
-                        <li><a href="#">Erkaklar kiyimlari</a></li>
-                        <li><a href="#">Ayollar kiyimlari</a></li>
-                        <li><a href="#">Yangi kelganlar</a></li> 
-                        <li><a href="#">Aksiyalar va chegirmalar</a></li>
-                        <li><a href="#">Aksessuarlar</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Yordam</h4>
-                    <ul>
-                        <li><a href="#">Yetkazib berish va to'lov</a></li>
-                        <li><a href="#">Qaytarish va almashish</a></li>
-                        <li><a href="#">O'lcham jadvallari</a></li>
-                        <li><a href="#">Tez-tez so'raladigan savollar</a></li>
-                        <li><a href="#">Aloqa</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Aloqa</h4>
-                    <ul>
-                        <li><a href="tel:+998712509391"><i class="fas fa-phone"></i> +998 71 2509391</a></li>
-                        <li><a href="mailto:info@terrapro.uz"><i class="fas fa-envelope"></i> info@terrapro.uz</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Toshkent, O'zbekiston</li>
-                        <li><i class="fas fa-clock"></i> Dush-Shan: 9:00 - 18:00</li>
-                    </ul>
+                <p>Erkaklar va ayollar uchun zamonaviy kiyimlar internet-do'koni. Har bir tafsilotda sifat, uslub va qulaylik.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 TERRA PRO. Barcha huquqlar himoyalangan.</p>
+            <div class="footer-column">
+                <h4>Katalog</h4>
+                <ul>
+                    <li><a href="#">Erkaklar kiyimlari</a></li>
+                    <li><a href="#">Ayollar kiyimlari</a></li>
+                    <li><a href="#">Yangi kelganlar</a></li> 
+                    <li><a href="#">Aksiyalar va chegirmalar</a></li>
+                    <li><a href="#">Aksessuarlar</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Yordam</h4>
+                <ul>
+                    <li><a href="#">Yetkazib berish va to'lov</a></li>
+                    <li><a href="#">Qaytarish va almashish</a></li>
+                    <li><a href="#">O'lcham jadvallari</a></li>
+                    <li><a href="#">Tez-tez so'raladigan savollar</a></li>
+                    <li><a href="#">Aloqa</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Aloqa</h4>
+                <ul>
+                    <li><a href="tel:+998712509391"><i class="fas fa-phone"></i> +998 71 2509391</a></li>
+                    <li><a href="mailto:info@terrapro.uz"><i class="fas fa-envelope"></i> info@terrapro.uz</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Toshkent, O'zbekiston</li>
+                    <li><i class="fas fa-clock"></i> Dush-Shan: 9:00 - 18:00</li>
+                </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>© 2025 TERRA PRO. Barcha huquqlar himoyalangan.</p>
+        </div> 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // Инициализация Swiper
         document.addEventListener('DOMContentLoaded', function() {
-            // Инициализация Swiper для товаров
             const swiper = new Swiper('.swiper', {
-                slidesPerView: 1, // Показывать 1 слайд на маленьких экранах
-                spaceBetween: 20, // Расстояние между слайдами
-                loop: true, // Бесконечная прокрутка
-                autoplay: {
-                    delay: 5000, // Автопрокрутка каждые 5 секунд
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                    },
                 },
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                breakpoints: {
-                    // Когда ширина окна >= 640px
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    // Когда ширина окна >= 768px
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    // Когда ширина окна >= 1024px
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 30,
-                    },
-                },
             });
-
-            // Функция для добавления товара в корзину
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            addToCartButtons.forEach(button => {
+            
+            // Обновление текущего времени
+            function updateTime() {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+                document.getElementById('current-time').textContent = now.toLocaleDateString('uz-UZ', options);
+            }
+            
+            setInterval(updateTime, 60000);
+            updateTime();
+            
+            // Корзина и избранное
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            
+            function updateCartUI() {
+                const cartItems = document.getElementById('cart-items');
+                const cartTotal = document.getElementById('cart-total');
+                
+                if (!cartItems) return;
+                
+                cartItems.innerHTML = '';
+                let total = 0;
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p class="empty-message">Savat bo\'sh</p>';
+                    cartTotal.textContent = 'Jami: 0 so\'m';
+                    return;
+                }
+                
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.price.toLocaleString()} so'm</p>
+                        </div>
+                        <button class="remove-from-cart" data-index="${index}">&times;</button>
+                    `;
+                    
+                    cartItems.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = `Jami: ${total.toLocaleString()} so'm`;
+                
+                // Добавляем обработчики событий для кнопок удаления
+                document.querySelectorAll('.remove-from-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        cart.splice(index, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartUI();
+                    });
+                });
+            }
+            
+            function updateWishlistUI() {
+                const wishlistItems = document.getElementById('wishlist-items');
+                
+                if (!wishlistItems) return;
+                
+                wishlistItems.innerHTML = '';
+                
+                if (wishlist.length === 0) {
+                    wishlistItems.innerHTML = '<p class="empty-message">Sevimlilar ro\'yxati bo\'sh</p>';
+                    return;
+                }
+                
+                wishlist.forEach((item, index) => {
+                    const wishlistItem = document.createElement('div');
+                    wishlistItem.className = 'wishlist-item';
+                    wishlistItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="wishlist-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.price.toLocaleString()} so'm</p>
+                        </div>
+                        <button class="remove-from-wishlist" data-index="${index}">&times;</button>
+                    `;
+                    
+                    wishlistItems.appendChild(wishlistItem);
+                });
+                
+                // Добавляем обработчики событий для кнопок удаления
+                document.querySelectorAll('.remove-from-wishlist').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        wishlist.splice(index, 1);
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                        updateWishlistUI();
+                    });
+                });
+            }
+            
+            // Обработчики для кнопок добавления в корзину и избранное
+            document.querySelectorAll('.add-to-cart').forEach(button => {
                 button.addEventListener('click', function() {
                     const name = this.getAttribute('data-name');
-                    const price = this.getAttribute('data-price');
+                    const price = parseInt(this.getAttribute('data-price'));
                     const image = this.getAttribute('data-image');
                     
-                    // Здесь можно добавить логику для добавления товара в корзину
-                    alert(`Товар "${name}" добавлен в корзину!`);
+                    cart.push({ name, price, image });
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                    alert(`${name} savatga qo'shildi!`);
+                    updateCartUI();
                 });
             });
-
-            // Функция для добавления товара в избранное
-            const addToWishlistButtons = document.querySelectorAll('.add-to-wishlist');
-            addToWishlistButtons.forEach(button => {
+            
+            document.querySelectorAll('.add-to-wishlist').forEach(button => {
                 button.addEventListener('click', function() {
                     const name = this.getAttribute('data-name');
+                    const price = parseInt(this.getAttribute('data-price'));
+                    const image = this.getAttribute('data-image');
                     
-                    // Изменение иконки сердца
-                    const icon = this.querySelector('i');
-                    if (icon.classList.contains('far')) {
-                        icon.classList.remove('far');
-                        icon.classList.add('fas');
-                        this.style.backgroundColor = '#e74c3c';
-                        this.style.color = '#fff';
-                        alert(`Товар "${name}" добавлен в избранное!`);
+                    // Проверяем, нет ли уже этого товара в избранном
+                    if (!wishlist.some(item => item.name === name)) {
+                        wishlist.push({ name, price, image });
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                        alert(`${name} sevimlilar ro'yxatiga qo'shildi!`);
                     } else {
-                        icon.classList.remove('fas');
-                        icon.classList.add('far');
-                        this.style.backgroundColor = '#f8f9fa';
-                        this.style.color = '#7f8c8d';
-                        alert(`Товар "${name}" удален из избранного!`);
+                        alert('Bu mahsulot allaqachon sevimlilar ro\'yxatiga qo\'shilgan');
+                    }
+                    
+                    updateWishlistUI();
+                });
+            });
+            
+            // Инициализация интерфейса корзины и избранного
+            updateCartUI();
+            updateWishlistUI();
+            
+            // Плавная прокрутка для якорей
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
                     }
                 });
             });
-
-            // Функция для отображения текущего времени
-            function updateTime() {
-                const now = new Date();
-                const timeElement = document.getElementById('current-time');
-                if (timeElement) {
-                    const timeString = now.toLocaleTimeString('uz-UZ');
-                    timeElement.textContent = timeString;
-                }
-            }
-            
-            updateTime();
-            setInterval(updateTime, 1000);
         });
     </script>
 </body>
